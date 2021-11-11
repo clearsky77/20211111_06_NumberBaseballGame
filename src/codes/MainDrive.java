@@ -33,18 +33,20 @@ public class MainDrive {
 		}
 		
 //		나온 문제의 값을 출력
-		for(int cpuNum : cpuNumbers) {
-			System.out.println("문제 숫자: "+ cpuNum);
-		}
+//		for(int cpuNum : cpuNumbers) {
+//			System.out.println("문제 숫자: "+ cpuNum);
+//		}
 		
 		
 		System.out.println("-------------------------------");
 		
 //		사용자에게 3자리 숫자 입력 -> 3S 맞출때까지.
+		int tryCount = 0; // 입력 시도 횟수
 		Scanner myScanner = new Scanner(System.in);
 		while (true) {
 			System.out.print("정답 입력 (3자리 정수) : ");
 			int inputNum = myScanner.nextInt();
+			tryCount++;
 			
 			// 723 => [7, 2, 3] 배열형태로 분리하자. => 문제 배열과 비교하기 편해짐.
 			int[]  userNumbers = new int[3];
@@ -88,6 +90,7 @@ public class MainDrive {
 //			3S라면? 정답 맞췄다. => 무한 반복 탈출
 			if (strikeCount == 3) {
 				System.out.println("축하합니다. 정답을 맞췄습니다.");
+				System.out.println(tryCount+"회만에 맞췄습니다.");
 				break;
 			}
 			
