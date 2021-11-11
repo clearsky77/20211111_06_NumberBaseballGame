@@ -38,6 +38,8 @@ public class MainDrive {
 		}
 		
 		
+		System.out.println("-------------------------------");
+		
 //		사용자에게 3자리 숫자 입력 -> 3S 맞출때까지.
 		Scanner myScanner = new Scanner(System.in);
 		while (true) {
@@ -79,13 +81,17 @@ public class MainDrive {
 				}
 			}
 			
+			
+//			결과 안내
+			System.out.println(strikeCount+"S / " + ballCount + "B 입니다.");
+
+//			3S라면? 정답 맞췄다. => 무한 반복 탈출
+			if (strikeCount == 3) {
+				System.out.println("축하합니다. 정답을 맞췄습니다.");
+				break;
+			}
+			
 		}
-		
-
-
-
-		
-		
 		
 		
 	}
